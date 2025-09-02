@@ -1,0 +1,16 @@
+[gcp_service_account]
+type = "service_account"
+project_id = "streamlitsheets-470917"
+private_key_id = "..."
+private_key = """
+-----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKc...
+...linha por linha, exatamente como no JSON...
+-----END PRIVATE KEY-----
+"""
+client_email = "streamlit@streamlitsheets-470917.iam.gserviceaccount.com"
+client_id = "..."
+auth_uri = "https://accounts.google.com/o/oauth2/auth"
+token_uri = "https://oauth2.googleapis.com/token"
+auth_provider_x509_cert_url = "https://www.googleapis.com/oauth2/v1/certs"
+client_x509_cert_url = "https://www.googleapis.com/robot/v1/metadata/x509/streamlit%40streamlitsheets-470917.iam.gserviceaccount.com"
