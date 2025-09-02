@@ -52,7 +52,7 @@ def open_sheet():
         ws = sh.worksheet(gsheet_tab)
     except gspread.WorksheetNotFound:
         ws = sh.add_worksheet(title=gsheet_tab, rows=2000, cols=12)
-        ws.append_row(["timestamp", "nota_index", "analista", "nota_preview", "analise", "modelos", "itens_mostrados_json"])
+        ws.append_row(["timestamp", "nota_index", "nota_preview", "analise", "modelos", "itens_mostrados_json"])
     return ws
 
 # -------- Sidebar --------
@@ -127,7 +127,6 @@ else:
     st.header("Análise do avaliador")
 
     with st.form("form_analise", clear_on_submit=True):
-        analista = st.text_input("Seu nome (opcional)", value="")
         analise_txt = st.text_area("Escreva sua análise aqui:", height=220, placeholder="Descreva a avaliação clínica, justificativas, observações sobre CIDs, etc.")
         submitted = st.form_submit_button("Salvar em Google Sheets")
 
@@ -143,7 +142,6 @@ else:
             ws.append_row([
                 timestamp,
                 int(nota_idx),
-                analista,
                 nota_preview,
                 analise_txt,
                 modelos_list,
